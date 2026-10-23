@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Online Food Ordering Platform</title>
+
+</head>
+
+
+
+<body>
+    <!-- REGISTRATION PAGE -->
+<div id="registrationPage">
+
+    <div class="register-box">
+
+        <h1>🍽 FoodExpress</h1>
+
+        <h2>Registration</h2>
+
+        <input type="text"
+               id="regName"
+               placeholder="Enter Full Name">
+
+        <input type="tel"
+               id="regNumber"
+               placeholder="Enter Mobile Number">
+
+        <input type="email"
+               id="regEmail"
+               placeholder="Enter Email">
+
+        <input type="password"
+               id="regPassword"
+               placeholder="Enter Password">
+
+        <button onclick="registerUser()">
+            Register
+        </button>
+
+    </div>
+
+</div>
+
+          <!-- LOGIN PAGE -->
+
+<div id="loginPage" style="display:none;">
+
+    <div class="overlay">
+
+        <div class="login-box">
+
+            <h1>🍽 FoodExpress</h1>
+            <h3>Login</h3>
+
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Enter Full Name"
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+            >
+
+            <button
+                type="button"
+                onclick="verifyEmail()">
+                Verify Email
+            </button>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                id="successMessage"
+                class="success-box"
+                style="display:none;">
+
+                <h3>✅ Email Verified Successfully</h3>
+
+                <p>
+                    Name:
+                    <b id="verifiedName"></b>
+                </p>
+
+                <p>
+                    Email:
+                    <b id="verifiedEmail"></b>
+                </p>
+
+                <button
+                    type="button"
+                    onclick="showStartOrdering()">
+                    OK
+                </button>
+
+            </div>
+
+
+            <!-- START ORDERING BUTTON -->
+
+            <button
+                id="startBtn"
+                type="button"
+                onclick="startWebsite()"
+                style="display:none;">
+
+                Start Ordering
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+          
+
+
+  <!-- Website -->
+
+       
+<div id="website" style="display:none;">
+
+
+    <header>
+
+        <div class="type">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            <h2>FoodExpress</h2>
+
+        </div>
+        <nav>
+           <ul>
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#menu" onclick="showAllMenu()"> Menu </a></li>
+
+             <li><a href="#about">About</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+<li class="user-area">
+
+    <i class="fa-solid fa-circle-user"
+       onclick="showProfile()"
+       style="color:#2b6cff;font-size:28px;cursor:pointer;">
+    </i>
+
+    <span id="welcomeUser"></span>
+
+    <button class="logout-btn" onclick="logoutUser()">
+        Logout
+    </button>
+
+</li>
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+
+<!-- HERO / OFFERS SECTION -->
+ <section class="hero" id="home">
+    <!-- OFFER HEADING -->
+<div class="offer-heading-box">
+    <h2>🔥 Special Offers For You</h2>
+
+    <p>
+        Grab your favourite food at amazing prices!
+    </p>
+</div>
+
+<!-- LEFT SIDE CONTENT -->
+<div class="hero-content">
+
+    <h1>
+        Delicious Food<br>
+        Delivered To Your Door
+    </h1>
+
+    <p>
+        Order your favourite food from the best restaurants near you.
+        <br>
+        Fast Delivery | Fresh Food | Best Offers
+    </p>
+<button class="hero-order-btn" onclick="orderAllOffers()">
+    Order Now
+</button>
+</div>
+<!-- RIGHT SIDE - 4 OFFER IMAGES -->
+
+<div class="hero-offers">
+
+    <div class="hero-offer-card">
+
+        <img src="image/pizza combo.jpg">
+
+        <h3>Pizza Combo</h3>
+
+        <p>Flat 50% OFF</p>
+
+        <h4>₹199</h4>
+
+    </div>
+
+
+    <div class="hero-offer-card">
+<img src="image/burgercombo.jpeg" alt="Burger Combo">
+        <h3>Burger Combo</h3>
+
+        <p>Flat 40% OFF</p>
+
+        <h4>₹199</h4>
+
+    </div>
+
+
+    <div class="hero-offer-card">
+
+        <img src="image/biryani.jpeg">
+        <h3>Chicken Biryani</h3>
+
+        <p>Special Offer</p>
+
+        <h4>₹249</h4>
+
+    </div>
+
+
+    <div class="hero-offer-card">
+
+        <img src="image/dessert.jpeg">
+        <h3>Dessert Combo</h3>
+
+        <p>Flat 50% OFF</p>
+
+        <h4>₹149</h4>
+
+    </div>
+
+</div>
+
+</section>
+<!-- Search -->
+
+    <section class="search-box">
+
+        <input type="text" placeholder="Search Food...">
+      
+<button onclick="searchFood()">Search</button>
+
+     
+    </section>
+
+
+    <section class="categories">
+
+        <h2>
+
+            Food Categories
+
+        </h2>
+
+        <div class="categories-container">
+
+            <div class="card">
+
+                <img src="image/images (2).jpg">
+
+                <h3>Pizza</h3>
+
+            </div>
+
+            <div class="card">
+
+                <img src="image/burger.jpg">
+
+                <h3>Burger</h3>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="image/Pastry.jpg">
+
+                <h3>Pastry And Cakes</h3>
+
+            </div>
+             <div class="card">
+
+                <img src="image/biryani.jpg">
+
+                <h3>Biryani</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="popular-food" id="menu">
+
+        <div class="food-filter">
+
+    <button onclick="filterFood('pizza', this)">
+        🍕 Pizza
+    </button>
+
+    <button onclick="filterFood('burger', this)">
+        🍔 Burger
+    </button>
+
+    <button onclick="filterFood('cake', this)">
+        🎂 Pastry & Cake
+    </button>
+
+    <button onclick="filterFood('chicken', this)">
+        🍗 Chicken
+    </button>
+
+</div>
+
+        <h2>🥗 Veg Menu</h2>
+
+<div class="food-container">
+
+           <!-- 1. Margherita Pizza -->
+<div class="food-card" data-category="pizza">
+
+  <img src="image/Margherita Pizza.jpg">
+
+
+    <h3>Margherita Pizza</h3>
+
+    <p>Classic pizza with fresh tomato, cheese and basil.</p>
+
+    <h4>₹299</h4>
+<div class="quantity-box">
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Margherita Pizza',299,-1)">
+        −
+    </button>
+
+   <span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Margherita Pizza',299,1)">
+        +
+    </button>
+</div>
+
+</div>
+
+
+<!-- 2. Farmhouse Pizza -->
+<div class="food-card" data-category="pizza">
+
+    <img src="image\farm.jpg">
+
+    <h3>Farmhouse Pizza</h3>
+
+    <p>Fresh vegetables and cheese.</p>
+
+    <h4>₹299</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Farmhouse Pizza',299,-1)">
+        −
+    </button>
+  <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Farmhouse Pizza',299,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 3. Cheese Pizza -->
+<div class="food-card" data-category="pizza">
+
+    <img src="image\chese.jpg">
+
+    <h3>Cheese Pizza</h3>
+
+    <p>Loaded with extra cheese and delicious toppings.</p>
+
+    <h4>₹279</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Cheese Pizza',279,-1)">
+        −
+    </button>
+
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Cheese Pizza',279,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 4. Paneer Pizza -->
+<div class="food-card" data-category="pizza">
+
+    <img src="image\paneer pizza.jpg">
+
+    <h3>Paneer Pizza</h3>
+
+    <p>Spicy paneer with fresh vegetables and cheese.</p>
+
+    <h4>₹329</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Paneer Pizza',329,-1)">
+        −
+    </button>
+ <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Paneer Pizza',329,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 5. Veggie Pizza -->
+<div class="food-card" data-category="pizza">
+
+    <img src="image\veggie pizaa.jpg">
+
+    <h3>Veggie Pizza</h3>
+
+    <p>Fresh capsicum, onion, tomato and sweet corn.</p>
+
+    <h4>₹289</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Veggie Pizza',289,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Veggie Pizza',289,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+<!-- 6. Corn Pizza -->
+<div class="food-card" data-category="pizza">
+
+    <img src="image\corn pizza.jpg">
+
+    <h3>Corn Pizza</h3>
+
+    <p>Sweet corn with creamy cheese and tasty toppings.</p>
+
+    <h4>₹269</h4>
+
+<div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Corn Pizza',269,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Corn Pizza',269,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+           
+<!-- 1. Cheese Burger -->
+<div class="food-card" data-category="burger">
+
+    <img src="image\cheese burger.jpg">
+
+    <h3>Cheese Burger</h3>
+
+    <p>Juicy burger loaded with melted cheese.</p>
+
+    <h4>₹179</h4>
+
+<div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Cheese Burger',179,-1)">
+        −
+    </button>
+
+      <span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Cheese Burger',179,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 2. Paneer Burger -->
+<div class="food-card" data-category="burger">
+
+    <img src="image\panner burger.jpg">
+
+    <h3>Paneer Burger</h3>
+
+    <p>Delicious crispy paneer patty with fresh vegetables.</p>
+
+    <h4>₹189</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Paneer Burger',189,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Paneer Burger',189,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 3. Double Cheese Burger -->
+<div class="food-card" data-category="burger">
+
+    <img src="image/d chsse byrger.jpg">
+
+    <h3>Double Cheese Burger</h3>
+
+    <p>Double patty burger with extra cheese and fresh veggies.</p>
+
+    <h4>₹229</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Double Cheese Burger',229,-1)">
+        −
+    </button>
+
+    <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Double Cheese Burger',229,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 4. Crispy Veg Burger -->
+<div class="food-card" data-category="burger">
+
+    <img src="image\crispy veg burger.jpg">
+
+    <h3>Crispy Veg Burger</h3>
+
+    <p>Crispy vegetable patty with lettuce and tasty sauce.</p>
+
+    <h4>₹159</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Crispy Veg Burger',159,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Crispy Veg Burger',159,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 5. Mexican Burger -->
+<div class="food-card" data-category="burger">
+
+    <img src="image/mexican.jpg">
+
+    <h3>Mexican Burger</h3>
+
+    <p>Spicy burger with Mexican-style sauce and vegetables.</p>
+
+    <h4>₹199</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Mexican Burger',199,-1)">
+        −
+    </button>
+ <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Mexican Burger',199,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+          <div class="food-card" data-category="burger">
+
+                <img src="image\Veg Burger.jpg" alt="Burger">
+
+                <h3>Veg Burger</h3>
+
+                <p>Loaded with fresh veggies and cheese.</p>
+
+                <h4>₹149</h4>
+<div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Veg Burger',149,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Veg Burger',149,1)">
+        +
+    </button>
+
+</div>
+
+
+            </div>
+              <div class="food-card">
+
+                <img src="image\White Sauce Pasta.jpg" alt="Pasta">
+
+                <h3>White Sauce Pasta</h3>
+
+                <p>Creamy Italian pasta.</p>
+
+                <h4>₹199</h4>
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('White Sauce Pasta',199,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('White Sauce Pasta',199,1)">
+        +
+    </button>
+
+</div>
+
+                 </div>
+                 <div class="food-card">
+
+                <img src="image\french.jpg">
+
+                <h3>French Fries</h3>
+
+                <p>Crispy Golden potatos fries.
+                </p>
+
+                <h4>₹129</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('French Fries',129,-1)">
+        −
+    </button>
+
+      <span>0</span>
+    <button class="qty-btn plus"
+            onclick="changeQuantity('French Fries',129,1)">
+        +
+    </button>
+
+</div>
+
+                </div>
+                 <div class="food-card">
+
+                <img src="image\dossaa.jpg">
+
+                <h3>Dossa</h3>
+
+                <p>South Indian crispy rice 
+                crepe.</p>
+
+
+                <h4>₹149</h4>
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Dossa',149,-1)">
+        −
+    </button>
+ <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Dossa',149,1)">
+        +
+    </button>
+
+</div>
+
+                </div>
+                 <div class="food-card">
+
+                <img src="image\paneer.jpg">
+
+                <h3>Paneer</h3>
+
+                <p>Soft paneer with rich spices.</p>
+
+                <h4>₹249</h4>
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Paneer',249,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Paneer',249,1)">
+        +
+    </button>
+    </div>
+
+                </div>
+                 <div class="food-card">
+
+                <img src="image\noddles.jpg">
+
+                <h3>Noddles</h3>
+
+                <p>Spicy stir-fried noodles.</p>
+
+                <h4>₹179</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Noddles',179,-1)">
+        −
+    </button>
+ <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Noddles',179,1)">
+        +
+    </button>
+
+</div>
+                </div>
+         <div class="food-card">
+
+                <img src="image\PaneerChilli.jpg">
+
+                <h3>Paneer Chilli</h3>
+
+                <p>Spicy paneer tossed with vegetables.</p>
+
+                <h4>₹229</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Paneer Chilli',229,-1)">
+        −
+    </button>
+
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Paneer Chilli',229,1)">
+        +
+    </button>
+
+</div>
+                </div>
+              </div>
+              
+              
+<!-- Chicken Biryani Card -->
+     <h2 style="text-align:center; margin-top:50px;">🍗 Non-Veg Menu</h2>
+
+                <div class="food-container">
+              <div class="food-card" data-category="chicken">
+
+                <img src="image\chik biryani.jpg" alt="Biryani">
+
+                <h3>Chicken Biryani</h3>
+
+                <p>Traditional spicy dum biryani.</p>
+
+                <h4>₹249</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Biryani',249,-1)">
+        −
+    </button>
+  <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Biryani',249,1)">
+        +
+    </button>
+
+</div>
+           </div>
+      
+           <div class="food-card" data-category="chicken">
+
+    <img src="image\chiken lolipop.jpg">
+
+    <h3>Chicken Lollipop</h3>
+
+    <p>Crispy and spicy chicken lollipop served hot.</p>
+
+    <h4>₹279</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Lollipop',279,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Lollipop',279,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+<div class="food-card" data-category="chicken">
+
+    <img src="image\chiken 65.jpg">
+
+    <h3>Chicken 65</h3>
+
+    <p>Spicy and crispy fried chicken with aromatic spices.</p>
+
+    <h4>₹269</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken 65',269,-1)">
+        −
+    </button>
+ <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken 65',269,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+<div class="food-card" data-category="chicken">
+
+    <img src="image\chickentikka.jpg">
+
+    <h3>Chicken Tikka</h3>
+
+    <p>Tender grilled chicken pieces marinated with spices.</p>
+
+    <h4>₹299</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Tikka',299,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Tikka',299,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+<div class="food-card" data-category="chicken">
+
+    <img src="image\Chicken Fried Rice.jpg">
+
+    <h3>Chicken Fried Rice</h3>
+
+    <p>Flavorful fried rice tossed with juicy chicken and vegetables.</p>
+
+    <h4>₹229</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Fried Rice',229,-1)">
+        −
+    </button>
+ <span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Fried Rice',229,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+          <div class="food-card" data-category="chicken">
+
+        <img src="image\chikenburgwr.jpg">
+            <h3>Chicken Burger</h3>
+
+                <p>Juicy chicken patty with fresh veggies.</p>
+
+                <h4>₹199</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Burger',199,-1)">
+        −
+    </button>
+
+ <span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Burger',199,1)">
+        +
+    </button>
+
+</div>
+           </div>
+             
+          <div class="food-card" data-category="chicken">
+
+                <img src="image\chikenpizza.jpg">
+
+                <h3>Chicken Pizza</h3>
+
+                <p>Cheesy pizza topped with spicy chicken.</p>
+
+                <h4>₹349</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Pizza',349,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Pizza',349,1)">
+        +
+    </button>
+
+</div>
+           </div>
+           
+          <div class="food-card" data-category="chicken">
+
+                <img src="image\chikentandor.jpg">
+
+                <h3>Chicken Tandoori</h3>
+
+                <p>Smoky grilled chicken with authentic spices.</p>
+
+                <h4>₹399</h4>
+
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Tandoori',399,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Tandoori',399,1)">
+        +
+    </button>
+
+</div>
+           </div>
+             
+          <div class="food-card" data-category="chicken">
+
+                <img src="image\chikenwings.jpg">
+
+                <h3>Chicken Wings</h3>
+
+                <p>Crispy and spicy chicken wings served hot..</p>
+
+                <h4>₹279</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Wings',279,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Wings',279,1)">
+        +
+    </button>
+
+</div>
+           </div>
+
+              
+          <div class="food-card" data-category="chicken">
+
+                <img src="image\Chicken Shawarma.jpg">
+
+                <h3>Chicken Shawarma</h3>
+
+                <p>Soft wrap filledwith juicy grilled chicken.</p>
+
+                <h4>₹299</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Shawarma',299,-1)">
+        −
+    </button>
+
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Shawarma',299,1)">
+        +
+    </button>
+
+</div>
+</div>
+            
+          <div class="food-card" data-category="chicken">
+            <img src="image\Chicken Kebab.jpg">
+
+<h3>Chicken Kebab</h3>
+
+                <p>Tender grilled chicken kebabs with aromatic spices.</p>
+
+                <h4>₹299</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chicken Kebab',299,-1)">
+        −
+    </button>
+
+  <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chicken Kebab',299,1)">
+        +
+    </button>
+
+</div>
+           </div>
+                               
+          <div class="food-card" data-category="chicken">
+
+                <img src="image\Butter Chicken.jpg">
+
+                <h3>Butter Chicken</h3>
+
+            <p>Creamy and flavorful chicken cooked in rich buttery gravy.</p>
+
+                <h4>₹329</h4>
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Butter Chicken',329,-1)">
+        −
+    </button>
+
+  <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Butter Chicken',329,1)">
+        +
+    </button>
+
+</div>
+           </div>
+            </div>
+       
+    <h2 style="text-align:center; margin-top:50px;">🥤 Cold Drinks</h2>
+
+<div class="food-container">
+    <!-- Coke Card -->
+                     <div class="food-card">
+
+                <img src="image\coke.jpg">
+
+                <h3>Coke</h3>
+
+                <p>Chilled and refreshing soft drink.</p>
+
+                <h4>₹49</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Coke',49,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Coke',49,1)">
+        +
+    </button>
+
+</div>
+                </div>
+    <!-- Sprite Card -->
+    <div class="food-card">
+
+                <img src="image\Sprite.jpg">
+
+                <h3>Sprite</h3>
+
+                <p>Crisp and refreshing lemon-lime soft drink..</p>
+
+                <h4>₹49</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Sprite',49,-1)">
+        −
+    </button>
+
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Sprite',49,1)">
+        +
+    </button>
+
+</div>
+                </div>
+    <!-- Pepsi Card -->
+       <div class="food-card">
+
+                <img src="image\Pepsi img.jpg">
+
+                <h3>pepsi</h3>
+
+                <p>Chilled cola drink with a bold and refreshing taste.</p>
+                <h4>₹49</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('pepsi',49,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('pepsi',49,1)">
+        +
+    </button>
+
+</div>
+                </div>
+    <!-- Fanta Card -->
+       <div class="food-card">
+
+                <img src="image\Fanta jpg.jpg">
+
+                <h3>Fanta</h3>
+
+                <p>Fruity orange-flavoured sparkling soft drink.</p>
+
+                <h4>₹49</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Fanta',49,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Fanta',49,1)">
+        +
+    </button>
+
+</div>
+</div>
+
+</div>
+
+<h2 style="text-align:center; margin-top:50px;">☕ Coffee</h2>
+
+<div class="food-container">
+
+    <!-- Chocolate Coffee Card -->
+                     <div class="food-card">
+
+                <img src="image\coffe.jpg">
+
+                <h3> Chocolate Coffee</h3>
+
+                <p>Sweet and creamy chocolate treat.</p>
+
+                <h4>₹89</h4>
+
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chocolate Coffee',89,-1)">
+        −
+    </button>
+
+   <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chocolate Coffee',89,1)">
+        +
+    </button>
+
+</div>
+                </div>
+    <!-- Cappuccino Card -->
+    <div class="food-card">
+
+                <img src="image/Cappuccino Coffee.jpg">
+
+                <h3> Cappuccino Coffee</h3>
+
+                <p>Creamy coffee topped with rich milk foam.</p>
+
+                <h4>₹199</h4>
+
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Cappuccino Coffee',199,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Cappuccino Coffee',199,1)">
+        +
+    </button>
+
+</div>
+                </div>
+    
+    <!-- Cold Coffee Card -->
+<div class="food-card">
+
+                <img src="image\Cold Coffee Card.jpg">
+
+                <h3> Cold Coffee</h3>
+
+                <p>Chilled coffee served with ice and cream.</p>
+
+                <h4>₹99</h4>
+
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Cold Coffee',99,-1)">
+        −
+    </button>
+ <span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Cold Coffee',99,1)">
+        +
+    </button>
+
+</div>
+                </div>
+                    <div class="food-card">
+
+                <img src="image\Espresso.jpg">
+
+                <h3>Espresso</h3>
+
+                <p>Strong and aromantic coffe with a bold taste.</p>
+
+                <h4>₹109</h4>
+
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Espresso',109,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Espresso',109,1)">
+        +
+    </button>
+
+</div>
+                </div>
+
+</div>
+
+<h2 style="text-align:center; margin-top:50px;">🎂 Cakes & Desserts</h2>
+
+<div class="food-container">
+    <!-- Donut Card -->
+         
+          <div class="food-card" data-category="Cake & Desserts">
+
+                <img src="image\Donat.jpg">
+
+                <h3>Donut</h3>
+
+                <p>Soft, sweet and delicious donut.</p>
+
+                <h4>₹119</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Donut',119,-1)">
+        −
+    </button>
+ <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Donut',119,1)">
+        +
+    </button>
+
+</div>
+
+            </div>
+    <!-- Pastry Card -->
+   
+          <div class="food-card" data-category="chicken">
+
+                <img src="image\Pastry1.jpg">
+
+                <h3>Pastry</h3>
+
+                <p>Fresh and creamy pastry with delicious layers.</p>
+
+                <h4>₹99</h4>
+
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Pastry',99,-1)">
+        −
+    </button>
+ <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Pastry',99,1)">
+        +
+    </button>
+
+</div>
+
+            </div>
+  <!-- 1. Chocolate Cake -->
+<div class="food-card" data-category="cake">
+
+    <img src="image\chocolate.jpg">
+
+    <h3>Chocolate Cake</h3>
+
+    <p>Soft and rich chocolate cake with creamy frosting.</p>
+
+    <h4>₹299</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chocolate Cake',299,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chocolate Cake',299,1)">
+        +
+    </button>
+
+</div>
+</div>
+<!-- 2. Vanilla Cake -->
+<div class="food-card" data-category="cake">
+
+    <img src="image\vanila.jpg">
+
+    <h3>Vanilla Cake</h3>
+
+    <p>Soft vanilla cake with delicious creamy frosting.</p>
+
+    <h4>₹249</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Vanilla Cake',249,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Vanilla Cake',249,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 3. Strawberry Cake -->
+<div class="food-card" data-category="cake">
+
+    <img src="image\stwaberry.jpg">
+
+    <h3>Strawberry Cake</h3>
+
+    <p>Fresh strawberry cake with sweet cream topping.</p>
+
+    <h4>₹299</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Strawberry Cake',299,-1)">
+        −
+    </button>
+
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Strawberry Cake',299,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 4. Black Forest Cake -->
+<div class="food-card" data-category="cake">
+
+    <img src="image\Black Forest Cake.jpg">
+
+    <h3>Black Forest Cake</h3>
+
+    <p>Delicious chocolate cake with cream and cherry.</p>
+
+    <h4>₹349</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Black Forest Cake',349,-1)">
+        −
+    </button>
+
+ <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Black Forest Cake',349,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 5. Chocolate Pastry -->
+<div class="food-card" data-category="cake">
+
+    <img src="image\Chocolate Pastry.jpg">
+
+    <h3>Chocolate Pastry</h3>
+
+    <p>Soft chocolate pastry with rich creamy layers.</p>
+
+    <h4>₹99</h4>
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Chocolate Pastry',99,-1)">
+        −
+    </button>
+
+<span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Chocolate Pastry',99,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 6. Red Velvet Pastry -->
+<div class="food-card" data-category="cake">
+
+    <img src="image\RedVelvetPastry.jpg">
+
+    <h3>Red Velvet Pastry</h3>
+
+    <p>Soft red velvet pastry with smooth cream cheese frosting.</p>
+
+    <h4>₹129</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Red Velvet Pastry',129,-1)">
+        −
+    </button>
+
+   <span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Red Velvet Pastry',129,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- 7. Pineapple Pastry -->
+<div class="food-card" data-category="cake">
+
+    <img src="image\Pastry1.jpg">
+
+    <h3>Pineapple Pastry</h3>
+
+    <p>Fresh and creamy pastry with delicious pineapple flavour.</p>
+
+    <h4>₹109</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Pineapple Pastry',109,-1)">
+        −
+    </button>
+
+ <span class="quantity">0</span>
+
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Pineapple Pastry',109,1)">
+        +
+    </button>
+
+</div>
+
+</div>
+    <!-- Cup Cake Card -->
+
+          <div class="food-card" data-category="chicken">
+
+                <img src="image\Cup Cake Card.jpg">
+
+                <h3>Cup Cake</h3>
+
+                <p>Soft and fluffy cupcake topped with creamy frosting.</p>
+
+                <h4>₹119</h4>
+
+    <div class="quantity-box">
+
+    <button class="qty-btn minus"
+            onclick="changeQuantity('Cup Cake',119,-1)">
+        −
+    </button>
+<span class="quantity">0</span>
+
+    <button class="qty-btn plus"
+            onclick="changeQuantity('Cup Cake',119,1)">
+        +
+    </button>
+
+</div>
+
+            </div>
+
+</div>
+
+    </section>
+ <!-- Top Restaurants -->
+
+    <section class="restaurant">
+
+        <h2>Top Restaurants</h2>
+
+        <div class="restaurant-container">
+
+            <div class="restaurant-card">
+
+                <img src="image\spicy.jpg">
+
+                <h3>Spice Villa</h3>
+
+                <p>⭐⭐⭐⭐☆ (4.5)</p>
+
+            </div>
+
+            <div class="restaurant-card">
+
+                <img src="image\tasty kitchn.jpg">
+
+                <h3>Tasty Kitchen</h3>
+
+                <p>⭐⭐⭐⭐⭐ (4.8)</p>
+
+            </div>
+
+            <div class="restaurant-card">
+
+                <img src="image\foodpoint.jpg">
+
+                <h3>Food Point</h3>
+
+                <p>⭐⭐⭐⭐☆ (4.6)</p>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="about" id="about">
+        <h2>About FoodExpress</h2>
+        <p>
+            FoodExpress is an Online Food Ordering Platform That allows Customers 
+            to order delicious food from nearby restaurants quikly and easily.
+        </p>
+        <h3>Why Choose Us?</h3>
+        <ul>
+            <li>Fast Delivery</li>
+            <li>Fresh & Hygienic Food</li>
+            <li>Easy Online Payment</li>
+            <li>24*7 Customer Support</li>
+        </ul>
+    </section>
+
+
+
+    <!-- Download App -->
+
+    <section class="app-section">
+
+        <div class="app-text">
+
+            <h2>Download Our Mobile App</h2>
+
+            <p>
+
+                Order food faster using our mobile application.
+
+            </p>
+<button onclick="googlePlay()">Google Play</button>
+<button onclick="appStore()">App Store</button>
+
+        </div>
+
+        <div class="app-image">
+
+            <img src="images/mobile.png">
+
+        </div>
+
+    </section>
+
+    <!-- Customer Reviews -->
+
+    <section class="review">
+
+        <h2>Customer Reviews</h2>
+
+        <div class="review-container">
+
+            <div class="review-card">
+
+                <h3>Arjun</h3>
+
+                <p>
+
+                    ⭐⭐⭐⭐⭐
+
+                </p>
+
+                <p>
+
+                    Excellent food quality and very fast delivery.
+
+                </p>
+
+            </div>
+
+            <div class="review-card">
+
+                <h3>Priya</h3>
+
+                <p>
+
+                    ⭐⭐⭐⭐⭐
+
+                </p>
+
+                <p>
+
+                    Beautiful website and easy ordering experience.
+
+                </p>
+
+            </div>
+
+            <div class="review-card">
+
+                <h3>Komal</h3>
+
+                <p>
+
+                    ⭐⭐⭐⭐☆
+
+                </p>
+
+                <p>
+
+                    Affordable prices and tasty food.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Contact Information -->
+
+    <section class="contact-info" id="contact">
+
+        <h2>Get In Touch</h2>
+
+        <div class="contact-container">
+
+            <div class="contact-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Address</h3>
+                <p>Chikhali, Pune, Maharashtra</p>
+            </div>
+
+            <div class="contact-box">
+                <i class="fa-solid fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+91 9876543210</p>
+            </div>
+
+            <div class="contact-box">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>Email</h3>
+                <p>support@foodexpress.com</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- CART PANEL -->
+
+<div class="cart-panel">
+<div class="cart-total">
+<button type="button" onclick="checkout()">
+    🛒Cart <span id="cartCount">0</span>
+</button>
+
+</div>
+
+</div>
+<!-- Footer -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-about">
+                <h2>FoodExpress</h2>
+                <p>
+                    FoodExpress is an Online Food Ordering Platform
+                    where customers can explore restaurants, order
+                    delicious food, and enjoy fast delivery with
+                    a modern user experience.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#menu"></a></li>
+                    <li><a href="#about"></a></a></li>
+                <li><a href="#contact"></a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-services">
+
+                <h3>Services</h3>
+
+                <ul>
+                    <li>Online Food Order</li>
+                    <li>Fast Delivery</li>
+                    <li>Table Booking</li>
+                    <li>Online Payment</li>
+                </ul>
+
+            </div>
+
+            <div class="footer-social">
+
+                <h3>Follow Us</h3>
+
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                 <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                
+              </div>
+              </div>
+              <hr>
+              <p class="copyright">
+                © 2026 FoodExpress-Online food Otdering Platform.
+                All Rights Reserved.
+                </p>
+                </footer>
+                <!-- CHECKOUT SECTION -->
+
+<div id="checkoutBox">
+
+<h2>🧾 Confirm Your Order</h2>
+
+<input
+    type="text"
+    id="customerName"
+    placeholder="Enter Your Name"
+>
+
+<input
+    type="text"
+    id="mobile"
+    placeholder="Enter Mobile Number"
+>
+
+<textarea
+    id="address"
+    placeholder="Enter Delivery Address">
+</textarea>
+
+<h3>
+Select Payment Method
+</h3>
+
+
+<button onclick="selectPayment('Google Pay')">
+Google Pay
+</button>
+
+
+<button onclick="selectPayment('PhonePe')">
+PhonePe
+</button>
+
+
+<button onclick="selectPayment('UPI')">
+UPI
+</button>
+
+
+<button onclick="selectPayment('Cash On Delivery')">
+Cash On Delivery
+</button>
+</div>
+<!-- QR PAYMENT BOX -->
+
+<div id="qrBox">
+
+    <h2>📱 Scan & Pay</h2>
+
+    <p id="paymentTitle"></p>
+
+    <img id="qrImage"
+         src=""
+         alt="Payment QR Code">
+
+    <p>Scan this QR code using your UPI app</p>
+
+    <button onclick="paymentDone()">
+        ✅ Payment Done
+    </button>
+
+    <button onclick="closeQR()">
+        ❌ Cancel
+    </button>
+
+</div>
+
+
+<!-- BILL SECTION -->
+
+<div id="billBox">
+
+<h1>🍽️ FoodExpress</h1>
+
+<h2>✅ Order Confirmed</h2>
+
+<p id="customerDetails"></p>
+
+
+<h3>Your Order</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Item</th>
+<th>Qty</th>
+<th>Price</th>
+</tr>
+
+</thead>
+
+
+<tbody id="billItems">
+
+</tbody>
+
+
+</table>
+
+
+<h2>
+Total Amount : ₹<span id="billTotal"></span>
+</h2>
+
+
+<h3>
+Payment : <span id="billPayment"></span>
+</h3>
+
+
+<button onclick="printBill()">
+🖨️ Print Bill
+</button>
+
+
+<button onclick="closeBill()">
+Back To Home
+</button>
+
+
+</div>
+</div>  
+       <!-- LOGOUT SUCCESS BOX -->
+<div id="logoutBox">
+    <div class="logout-content">
+        <h2>✅ Logout Successful</h2>
+        <p>You have been logged out successfully.</p>
+        <button onclick="closeLogoutBox()">OK</button>
+    </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+
+</html>
